@@ -1,0 +1,139 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void menu(){
+    
+    printf("    menu principal  \n\n");
+    printf(" 1-analizar numero  \n");
+    printf(" 2- calculadora   \n");
+    printf(" 3-   regresar    \n");
+
+}
+
+
+int calculadora(int a, int b, int opcionC)
+{
+    int c
+    
+    if (op==1)
+    {
+        
+        c= op1+op2;
+        printf("el resultado de la suma es: %d", c);
+
+    } else if (op==2)
+    {
+        c = op1-op2;
+        printf("el resutado de la resta es: %d", c);
+        
+    }    
+    
+    
+    
+}
+
+int main()
+{
+    int x,y,opcionP,opcionY; //k:case de la calculadora
+    int suma;
+    int resta;
+    int opcionC;
+
+    do{
+
+    menu();
+    scanf("%d", &opcionP);
+
+        switch(opcionP)
+        {
+            case 1:
+                printf("\nopcion analizar numero\n\n");
+                printf("ingresa un numero entero:");
+                scanf("%d", &x);
+
+                if ( x % 2 == 0){
+                    printf("\nel numero %d es par", x);
+                } else {
+                    printf("\nel numero %d es impar", x);
+                }
+
+
+
+                break;
+
+            case 2:
+
+            do{
+                printf("|||opcion calculadora|||\n");
+                printf("    1-sumar         \n");
+                printf("    2-restar        \n");
+                printf("    3-salir     \n");
+                scanf("%d", &opcionY);
+
+                switch(opcionC)
+                {
+
+                    {
+
+                    case 1:
+                        
+                        calculadora(x,y,opcionC)
+
+                        break;
+
+                    case 2:
+
+                        printf("resta\n");
+                        printf("introduce un  numero:");
+                        scanf("%d", &y);
+                        printf("\nintroduce el segundo numero:");
+                        scanf("%d", &x);
+
+                        resta= y/x;
+
+                        printf("\n\nEl resultado es: %d", resta);
+
+
+                        break;
+
+
+                      case 3:
+                        printf("opcion salir");
+                        return 0;
+
+                    } while (opcionP!=3);
+
+
+
+
+
+                }
+                
+                
+
+                break;
+
+            case 3:
+                printf("opcion salir");
+                return 0;
+
+
+            default:
+                    printf("\\\\opcion no valida///\n\n");
+                    printf("    menu principal   \n\n");
+                    printf(" 1-analizar numero   ");
+                    printf(" 2- calculadora   \n");
+                    printf(" 3-   regresar    ");
+
+                    break;
+
+
+
+        }
+    } while (opcionY!= 3);
+    {
+        printf("||||||||has salido del menu||||||||||||");
+    }
+
+    return 0;
+}
