@@ -1,14 +1,17 @@
 #include <stdio.h>
+#include <string.h> 
 
 int main() {
-
     int tablero[5][5];
     int fila, columna;
     char jugador[20];
-    char barcos[3][20] = {"fragata","destructor","submarino"};
+    char barco[10] = "Destructor"; 
 
-    printf("nombre: \n");
-    fgets(jugador,sizeof(jugador), stdin);
+    //Pedir nombre del jugador antes de iniciar
+    printf("Nombre del jugador: ");
+    fgets(jugador, sizeof(jugador), stdin);  
+  
+    jugador[strcspn(jugador, "\n")] = 0;
 
     // Inicializar tablero
     for(int i = 0; i < 5; i++) {
@@ -30,31 +33,29 @@ int main() {
         printf("\n");
     }
 
+    // Ciclo de turnos
     for(int turno = 0; turno < 5; turno++) {
-
-        printf("Turno de %s", jugador);
+        //Mostrar nombre en cada turno
+        printf("\nTurno de %s\n", jugador);
 
         printf("Fila: ");
         scanf("%d", &fila);
-
         printf("Columna: ");
         scanf("%d", &columna);
 
-        if(tablero[fila][columna] == 1){
-
-            printf("%s impacto un %s\n", jugador, barcos[0]);
+        // Evaluar si hay barco o agua
+        if (tablero[fila][columna] == 1) {
+            // mensaje personalizado cuando impacte 
+            printf("%s impactó un %s\n", jugador, barco);
             tablero[fila][columna] = 3;
-
         } else {
-
             printf("agua\n");
             tablero[fila][columna] = 2;
-
         }
 
+        // actualización del tablero
         for(int i = 0; i < 5; i++) {
             for(int j = 0; j < 5; j++) {
-
                 if(tablero[i][j] == 0 || tablero[i][j] == 1) {
                     printf("~ ");
                 } else if(tablero[i][j] == 2) {
@@ -62,13 +63,14 @@ int main() {
                 } else if(tablero[i][j] == 3) {
                     printf("X ");
                 }
-
             }
             printf("\n");
         }
     }
 
-    printf("el jugador %s gano la partida\n", jugador);
+    // mensaje final 
+    printf("\n%s termino la partida.\n", jugador);
 
     return 0;
 }
+
