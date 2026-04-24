@@ -124,3 +124,104 @@ void diagonal (int m[3][3])
     return 0;
 
     }
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+struct alumno {
+
+
+    char name [20];
+    float calificacion;
+    int actividades;
+    int derecho;
+    int edad;
+
+
+};
+
+
+
+
+int main()
+{
+
+    int i;
+
+    struct alumno pepito;
+
+    struct alumno grupo [3];
+
+
+
+    for (i=0;3>i;i++){
+
+
+
+            printf("\nregistro de alumno %d:\n", i+1);
+
+
+        fgets(grupo[i].name,20,stdin);
+        
+        
+        printf("\n")
+
+
+
+
+
+
+     printf("\ningresa el nombre del alumno: ");
+    fgets(pepito.name,20,stdin);
+    printf("\nnombre del alumno: %s\n", pepito.name);
+
+
+
+
+    printf("ingresa las actividades del alumno: ");
+    scanf("%d", &pepito.actividades);
+    printf("\nactividades del alumno: %d\n", pepito.actividades);
+
+
+
+        printf("\ningresa la edad del alumno: ");
+    scanf("%d", &pepito.edad);
+    printf("\nactividades del alumno: %d\n", pepito.edad);
+
+
+
+
+            printf("\ningresa la calificacion del alumno: ");
+    scanf("%f", &pepito.calificacion);
+    printf("\nactividades del alumno: %f\n", pepito.calificacion);
+    
+    getchar();
+
+}
+
+
+    /*union dato{
+
+        int entero;
+        float decimal;
+
+    };
+
+
+
+
+    int main(){
+
+
+
+        union dato x;
+
+        x.entero=10;
+        printf("%d\n", x.entero);
+
+    }   */
+
+
+
+    return 0;
+}
