@@ -33,7 +33,6 @@ int main() {
                     printf("Columna: ");
                     scanf("%d", &columna);
 
-    // AQUÍ DEBES COMPLETAR:
 
           // evaluar si hay barco o agua
         if ( tablero [fila][columna] == 1){
